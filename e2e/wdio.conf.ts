@@ -62,9 +62,16 @@ export const config: Options.Testrunner = {
       // capabilities for local Appium web tests on iOS
       platformName: 'iOS',
       'appium:deviceName': 'iPhone 13',
-      'appium:platformVersion': '16.2',
+      'appium:platformVersion': '16.4',
       'appium:automationName': 'XCUITest',
-      'appium:bundleId': 'com.example',
+      'appium:bundleId': 'com.example.e2e',
+    },
+    {
+      platformName: 'Android',
+      'appium:deviceName': 'Android',
+      'appium:automationName': 'UiAutomator2',
+      'appium:appPackage': 'com.example.e2e',
+      'appium:appActivity': '.MainActivity',
     },
   ],
 

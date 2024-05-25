@@ -1,16 +1,19 @@
-import React, {Component} from 'react';
-import {Text, View, FlatList, ScrollView} from 'react-native';
+import React from 'react';
+import {Text, ScrollView} from 'react-native';
 
-import Button from 'src/components/Button';
+import Button from '../../components/Button';
 import styles from './styles';
 import {useNavigation} from '@react-navigation/native';
+import {getTestIdProps} from '../../utils/test';
 
 const Home = () => {
   const navigation = useNavigation();
 
   return (
     <ScrollView style={styles.container}>
-      <Text style={styles.greeting}>Hi John, Welcome back!</Text>
+      <Text style={styles.greeting} {...getTestIdProps('txt_greeting')}>
+        Hi John, Welcome back!
+      </Text>
       <Text style={styles.content}>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio
         voluptatum expedita deserunt? Totam dolores hic, tempora atque quisquam
@@ -40,6 +43,7 @@ const Home = () => {
         onPress={() => {
           navigation.navigate('Profile');
         }}
+        {...getTestIdProps('btn_enter_profile')}
       />
     </ScrollView>
   );
